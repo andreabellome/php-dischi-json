@@ -36,7 +36,6 @@
         </div>
         <!-- end: header -->
 
-
         <!-- start: main -->
         <div class=" flex" style="height: calc(100% - 100px);">
 
