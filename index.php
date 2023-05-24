@@ -10,6 +10,7 @@
 
     <!-- css -->
     <link rel="stylesheet" href="./assets/css/library.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 
     <!-- bootstrap -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css'
@@ -39,7 +40,7 @@
             <div class="debug width-60 margin-auto flex flex-dir-row just-cont-evenly flex-wrap">
 
                 <!-- start: single card (cycled with for) -->
-                <div v-for="(disco, index) in data" :key="index" class="card mb-3 text-center"
+                <div v-for="(disco, index) in data" :key="index" class="card mb-3 text-center card-disco"
                     style="width: calc(100% / 3 - 1%);">
 
                     <img :src="disco.poster" class=" margin-auto width-70" :alt="disco.title">
