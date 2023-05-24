@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="./assets/css/library.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- bootstrap -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css'
         integrity='sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA=='
@@ -23,8 +28,7 @@
 
 <body>
 
-    <div id="app" class="debug" style="height: 100vh;">
-
+    <div id="app" class="debug container-web-app" style="height: 100vh; position: relative">
 
         <!-- start: header -->
         <div class="debug" style="height: 100px;">
@@ -34,7 +38,7 @@
 
 
         <!-- start: main -->
-        <div class="debug flex padd-10" style="height: calc(100% - 100px);">
+        <div class="debug flex padd-10" style="height: calc(100% - 100px); ">
 
             <!-- start: div witht the cards -->
             <div class="debug width-60 margin-auto flex flex-dir-row just-cont-evenly flex-wrap">
@@ -65,11 +69,42 @@
             </div>
             <!-- start: div witht the cards -->
 
-            <!-- <div v-for="(elem, index) in data" :key="index">
-                {{ elem.title }}
-            </div> -->
-        </div>
+            <!-- start: div in position relative with disc info -->
+            <div class="debug col-white info-disco">
 
+                <div class="debug flex flex-dir-col just-cont-center padd-10 col-white"
+                    style="height: 80px; align-items: flex-end;">
+                    <i class="fa-regular fa-rectangle-xmark col-white fa-2x"></i>
+                </div>
+
+                <div class="debug flex flex-dir-col align-it-center just-cont-center"
+                    style="height: calc(100% - 80px );">
+                    <div class="card text-center margin-auto" style="width: calc(100% / 3 - 1%);">
+
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51sBr4IWDwL.jpg"
+                            class=" margin-auto width-70" alt="New Jersey">
+                        <div class="card-body">
+
+                            <h5 class="card-title text-bold">
+                                New Jersey
+                            </h5>
+
+                            <span>
+                                Bon Jovi
+                            </span> <br>
+
+                            <span class="text-bold">
+                                1988
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- end: div in position relative with disc info -->
+
+        </div>
         <!-- end: main -->
 
     </div>
