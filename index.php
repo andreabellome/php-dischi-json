@@ -31,20 +31,20 @@
     <div id="app" class="container-web-app" style="height: 100vh; position: relative">
 
         <!-- start: header -->
-        <div class="debug" style="height: 100px;">
+        <div class="debug" style="height: 100px;" @click="closeWindowOnClickMain()">
             include header here
         </div>
         <!-- end: header -->
 
 
         <!-- start: main -->
-        <div class=" flex padd-top-10 padd-bottom-10" style="height: calc(100% - 100px);">
+        <div class=" flex" style="height: calc(100% - 100px);">
 
             <!-- start: div with the cards -->
-            <div class=" debug width-100p100 margin-auto flex flex-dir-row just-cont-evenly flex-wrap"
+            <div class="padd-10 debug width-100p100 margin-auto flex flex-dir-row just-cont-evenly flex-wrap"
                 @click="closeWindowOnClickMain()">
 
-                <div class="debug width-60 margin-auto flex flex-dir-row just-cont-evenly flex-wrap">
+                <div class="width-60 margin-auto flex flex-dir-row just-cont-evenly flex-wrap">
                     <!-- start: single card (cycled with for) -->
                     <div v-for="(disco, index) in data" :key="index" class="card mb-3 text-center card-disco"
                         v-bind:id="index" @click="activateWindowOnCllick(index)" style="width: calc(100% / 3 - 1%);">
