@@ -28,7 +28,7 @@
 
 <body>
 
-    <div id="app" class="debug container-web-app" style="height: 100vh; position: relative">
+    <div id="app" class="container-web-app" style="height: 100vh; position: relative">
 
         <!-- start: header -->
         <div class="debug" style="height: 100px;">
@@ -38,14 +38,14 @@
 
 
         <!-- start: main -->
-        <div class="debug flex padd-10" style="height: calc(100% - 100px); ">
+        <div class=" flex padd-10" style="height: calc(100% - 100px); ">
 
             <!-- start: div witht the cards -->
-            <div class="debug width-60 margin-auto flex flex-dir-row just-cont-evenly flex-wrap">
+            <div class=" width-60 margin-auto flex flex-dir-row just-cont-evenly flex-wrap">
 
                 <!-- start: single card (cycled with for) -->
                 <div v-for="(disco, index) in data" :key="index" class="card mb-3 text-center card-disco"
-                    style="width: calc(100% / 3 - 1%);">
+                    v-bind:id="index" @click="activateWindowOnCllick(index)" style="width: calc(100% / 3 - 1%);">
 
                     <img :src="disco.poster" class=" margin-auto width-70" :alt="disco.title">
                     <div class="card-body">
@@ -70,31 +70,29 @@
             <!-- start: div witht the cards -->
 
             <!-- start: div in position relative with disc info -->
-            <div class="debug col-white info-disco">
+            <div class=" col-white info-disco disp-none" :class="{ 'disp-block': !isActive}">
 
-                <div class="debug flex flex-dir-col just-cont-center padd-10 col-white"
+                <div class=" flex flex-dir-col just-cont-center padd-10 col-white"
                     style="height: 80px; align-items: flex-end;">
-                    <i class="fa-regular fa-rectangle-xmark col-white fa-2x"></i>
+                    <i class="fa-regular fa-rectangle-xmark col-white fa-2x " @click="closeWindowOnClick()"></i>
                 </div>
 
-                <div class="debug flex flex-dir-col align-it-center just-cont-center"
-                    style="height: calc(100% - 80px );">
+                <div class=" flex flex-dir-col align-it-center just-cont-center" style="height: calc(100% - 80px );">
                     <div class="card text-center margin-auto" style="width: calc(100% / 3 - 1%);">
 
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/51sBr4IWDwL.jpg"
-                            class=" margin-auto width-70" alt="New Jersey">
+                        <img :src="dataSingleCard.poster" class=" margin-auto width-70" alt="New Jersey">
                         <div class="card-body">
 
                             <h5 class="card-title text-bold">
-                                New Jersey
+                                {{dataSingleCard.title}}
                             </h5>
 
                             <span>
-                                Bon Jovi
+                                {{dataSingleCard.author}}
                             </span> <br>
 
                             <span class="text-bold">
-                                1988
+                                {{dataSingleCard.year}}
                             </span>
 
                         </div>

@@ -5,7 +5,9 @@ createApp({
         return {
             apiUrl: 'assets/apis/dischi.php',
             data: '',
-            nuovoDato: ''
+            classDispNone: 'disp-none',
+            isActive: true,
+            dataSingleCard: ''
         }
     },
     methods: {
@@ -15,6 +17,20 @@ createApp({
                     this.data = res.data;
                 });
         },
+
+        closeWindowOnClick() {
+            this.isActive = !this.isActive;
+        },
+
+        activateWindowOnCllick(index) {
+
+            if (this.data != '') {
+                this.isActive = false;
+                this.dataSingleCard = this.data[index];
+            }
+
+        }
+
     },
     mounted() {
         this.chiamataApi();
