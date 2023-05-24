@@ -7,6 +7,10 @@
     cursor: pointer;
 }
 
+.fa-brands:hover {
+    cursor: pointer;
+}
+
 .info-disco {
     position: absolute;
     top: 50%;

@@ -31,8 +31,9 @@
     <div id="app" class="container-web-app" style="height: 100vh; position: relative">
 
         <!-- start: header -->
-        <div class="debug" style="height: 100px;" @click="closeWindowOnClickMain()">
-            include header here
+        <div class="col-white flex flex-dir-row align-it-center padd-15"
+            style="height: 100px; background-color: #282828;" @click="closeWindowOnClickMain()">
+            <i class="fa-brands fa-spotify col-white fa-4x"></i>
         </div>
         <!-- end: header -->
 
@@ -40,7 +41,7 @@
         <div class=" flex" style="height: calc(100% - 100px);">
 
             <!-- start: div with the cards -->
-            <div class="padd-10 debug width-100p100 margin-auto flex flex-dir-row just-cont-evenly flex-wrap"
+            <div class="padd-10 width-100p100 margin-auto flex flex-dir-row just-cont-evenly flex-wrap"
                 @click="closeWindowOnClickMain()">
 
                 <div class="width-60 margin-auto flex flex-dir-row just-cont-evenly flex-wrap">
