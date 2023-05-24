@@ -22,22 +22,54 @@
 
 <body>
 
-    <div id="app" class="debug">
-        <h1>Lista spesa</h1>
+    <div id="app" class="debug" style="height: 100vh;">
 
-        <div v-for="(elem, index) in data" :key="index">
-            {{ elem.title }}
+
+        <!-- start: header -->
+        <div class="debug" style="height: 100px;">
+            include header here
+        </div>
+        <!-- end: header -->
+
+
+        <!-- start: main -->
+        <div class="debug flex padd-10" style="height: calc(100% - 100px);">
+
+            <!-- start: div witht the cards -->
+            <div class="debug width-60 margin-auto flex flex-dir-row just-cont-evenly flex-wrap">
+
+                <!-- start: single card (cycled with for) -->
+                <div v-for="(disco, index) in data" :key="index" class="card mb-3 text-center"
+                    style="width: calc(100% / 3 - 1%);">
+
+                    <img :src="disco.poster" class=" margin-auto width-70" :alt="disco.title">
+                    <div class="card-body">
+
+                        <h5 class="card-title text-bold">
+                            {{ disco.title}}
+                        </h5>
+
+                        <span>
+                            {{ disco.author }}
+                        </span> <br>
+
+                        <span class="text-bold">
+                            {{ disco.year }}
+                        </span>
+
+                    </div>
+                </div>
+                <!-- end: single card (cycled with for) -->
+
+            </div>
+            <!-- start: div witht the cards -->
+
+            <!-- <div v-for="(elem, index) in data" :key="index">
+                {{ elem.title }}
+            </div> -->
         </div>
 
-        <!-- <div>
-            <ul>
-                <li v-for="(elem,index) in data" :key="index">
-                    {{ elem.typo }}
-                </li>
-            </ul>
-        </div>
-
-        <input type="text" v-model="nuovoDato" @keyUp.enter="aggiungiDato"> -->
+        <!-- end: main -->
 
     </div>
 

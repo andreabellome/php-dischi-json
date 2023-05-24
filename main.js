@@ -15,13 +15,6 @@ createApp({
                     this.data = res.data;
                 });
         },
-        aggiungiDato() {
-            this.data.push(
-                {
-                    "typo": this.nuovoDato
-                }
-            )
-        }
     },
     mounted() {
         this.chiamataApi();
