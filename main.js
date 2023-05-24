@@ -27,11 +27,16 @@ createApp({
 
         /* start: at click outside the black box, the disc info disappears */
         closeWindowOnClickMain() {
-            this.idxactive = this.idxactive + 1;
 
-            if (this.idxactive == 2) {
-                this.isActive = !this.isActive;
+            if (this.dataSingleCard != '') {
+
+                this.idxactive = this.idxactive + 1;
+
+                if (this.idxactive == 2) {
+                    this.isActive = !this.isActive;
+                }
             }
+
         },
         /* end: at click outside the black box, the disc info disappears */
 
