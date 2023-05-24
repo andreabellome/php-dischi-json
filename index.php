@@ -38,36 +38,39 @@
 
 
         <!-- start: main -->
-        <div class=" flex padd-10" style="height: calc(100% - 100px); ">
+        <div class=" flex padd-top-10 padd-bottom-10" style="height: calc(100% - 100px);">
 
-            <!-- start: div witht the cards -->
-            <div class=" width-60 margin-auto flex flex-dir-row just-cont-evenly flex-wrap">
+            <!-- start: div with the cards -->
+            <div class=" debug width-100p100 margin-auto flex flex-dir-row just-cont-evenly flex-wrap"
+                @click="closeWindowOnClickMain()">
 
-                <!-- start: single card (cycled with for) -->
-                <div v-for="(disco, index) in data" :key="index" class="card mb-3 text-center card-disco"
-                    v-bind:id="index" @click="activateWindowOnCllick(index)" style="width: calc(100% / 3 - 1%);">
+                <div class="debug width-60 margin-auto flex flex-dir-row just-cont-evenly flex-wrap">
+                    <!-- start: single card (cycled with for) -->
+                    <div v-for="(disco, index) in data" :key="index" class="card mb-3 text-center card-disco"
+                        v-bind:id="index" @click="activateWindowOnCllick(index)" style="width: calc(100% / 3 - 1%);">
 
-                    <img :src="disco.poster" class=" margin-auto width-70" :alt="disco.title">
-                    <div class="card-body">
+                        <img :src="disco.poster" class=" margin-auto width-70" :alt="disco.title">
+                        <div class="card-body">
 
-                        <h5 class="card-title text-bold">
-                            {{ disco.title}}
-                        </h5>
+                            <h5 class="card-title text-bold">
+                                {{ disco.title}}
+                            </h5>
 
-                        <span>
-                            {{ disco.author }}
-                        </span> <br>
+                            <span>
+                                {{ disco.author }}
+                            </span> <br>
 
-                        <span class="text-bold">
-                            {{ disco.year }}
-                        </span>
+                            <span class="text-bold">
+                                {{ disco.year }}
+                            </span>
 
+                        </div>
                     </div>
+                    <!-- end: single card (cycled with for) -->
                 </div>
-                <!-- end: single card (cycled with for) -->
 
             </div>
-            <!-- start: div witht the cards -->
+            <!-- start: div with the cards -->
 
             <!-- start: div in position relative with disc info -->
             <div class=" col-white info-disco disp-none" :class="{ 'disp-block': !isActive}">
